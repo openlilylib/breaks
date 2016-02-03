@@ -32,7 +32,6 @@
 %
 
 \include "../oll-core/oll-core.ily"
-
 \registerPackage breaks
 
 % Register a named set of breaks that can be used later.
@@ -49,6 +48,20 @@ registerBreakSet =
      (setChildOption base-path 'page-breaks '())
      (setChildOption base-path 'page-turns '())))
 
+% TODO:
+% Should these two predicates be moved somewhere else?
+#(define (edition-engraver-moment? obj)
+   (or (integer? obj)
+       (and (list? obj)
+            (= 2 (length obj))
+            (integer? (car obj))
+            ; TODO
+            ; This is probably a little bit fuzzy still ...
+            (number? (cadr obj))
+            )))
+#(define (edition-engraver-list? obj)
+   (every edition-engraver-moment? obj))
+
 % Define *one* break set.
 % #1: <break-set>
 %     must be the name of a registered break set
@@ -62,7 +75,7 @@ registerBreakSet =
 % \setConditionalBreaks original-edition line-breaks #'(4 8 (11 1/4) 15)
 setConditionalBreaks =
 #(define-void-function (break-set type breaks)
-   (symbol? symbol? list?)
+   (symbol? symbol? edition-engraver-list?)
    (setChildOption
     `(breaks break-sets ,break-set) type breaks))
 
