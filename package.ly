@@ -34,6 +34,23 @@
 \include "../oll-core/oll-core.ily"
 \registerPackage breaks
 
+% Any functionality using breaks will rely on the edition-engraver
+% which is also part of openLilyLib
+%
+% TODO: Change this to a new edition-engraver package, using lyp
+\include "editorial-tools/edition-engraver/definitions.ily"
+
+% "Install" the edition-engraver in the score
+% All packages using breaks should address this
+% \editionEngraver breaks
+\layout {
+  \context {
+    \Score
+    \consists \editionEngraver breaks
+  }
+}
+
+
 % Register a named set of breaks that can be used later.
 % Calling \registerBreakSet <break-set> will initialize the break set
 % to have *no* entries for line and page breaks or page turns. However,
@@ -78,4 +95,3 @@ setBreaks =
    (symbol? symbol? edition-engraver-list?)
    (setChildOption
     `(breaks break-sets ,break-set) type breaks))
-
