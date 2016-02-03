@@ -73,7 +73,7 @@ registerBreakSet =
 %     an integer (bar number) and a fraction (zero-based moment).
 % Example:
 % \setConditionalBreaks original-edition line-breaks #'(4 8 (11 1/4) 15)
-setConditionalBreaks =
+setBreaks =
 #(define-void-function (break-set type breaks)
    (symbol? symbol? edition-engraver-list?)
    (setChildOption
