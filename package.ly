@@ -38,18 +38,8 @@
 % which is also part of openLilyLib
 %
 % TODO: Change this to a new edition-engraver package, using lyp
-\include "editorial-tools/edition-engraver/definitions.ily"
-
-% "Install" the edition-engraver in the score
-% All packages using breaks should address this
-% \editionEngraver breaks
-\layout {
-  \context {
-    \Score
-    \consists \editionEngraver breaks
-  }
-}
-
+\include "edition-engraver/edition-engraver.ily"
+\consistToContexts #edition-engraver Score
 
 % Register a named set of breaks that can be used later.
 % Calling \registerBreakSet <break-set> will initialize the break set
