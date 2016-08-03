@@ -37,9 +37,16 @@
 % Any functionality using breaks will rely on the edition-engraver
 % which is also part of openLilyLib
 %
-% TODO: Change this to a new edition-engraver package, using lyp
 \include "edition-engraver/edition-engraver.ily"
 \consistToContexts #edition-engraver Score
+
+% Install editionID
+\layout {
+  \context {
+    \Score
+    \editionID ##f breaks
+  }
+}
 
 % Register a named set of breaks that can be used later.
 % Calling \registerBreakSet <break-set> will initialize the break set
