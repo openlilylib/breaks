@@ -31,8 +31,13 @@
 % Provide infrastructure for packages working with conditional line/page breaks
 %
 
-\include "../oll-core/oll-core.ily"
-\registerPackage breaks
+\include "../oll-core/package.ily"
+\registerPackage breaks \with { 
+  maintainers = "Urs Liska <ul@openlilylib.org>"
+  version = "0.9.0"
+  short-description = "Manage sets of line and page breaks"
+  description = ""
+}
 
 % Any functionality using breaks will rely on the edition-engraver
 % which is also part of openLilyLib
