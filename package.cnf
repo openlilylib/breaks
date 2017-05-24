@@ -1,0 +1,20 @@
+#
+# openLilyLib/breads configuration
+#
+
+name: breaks
+display-name: _breaks
+short-description: Managing break sets in LilyPond scores
+description: <
+  _breaks is a utility package providing data structures to handle
+  break sets. It doesn't provide any user-facing functionality of
+  its own but is used by other packages such as page-layout and
+  partial-compilation.
+  >
+oll-core: 0.0.0
+maintainers: [
+  Urs Liska <ul@openlilylib.org>
+  ]
+version: 0.0.1
+license: GPL3
+repository:  https://github.com/openlilylib/breaks/
