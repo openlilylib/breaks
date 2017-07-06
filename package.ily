@@ -39,7 +39,6 @@
   description = ""
 }
 
-
 % Any functionality using breaks will rely on the edition-engraver
 % which is also part of openLilyLib
 %
