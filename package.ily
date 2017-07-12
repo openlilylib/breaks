@@ -31,8 +31,6 @@
 % Provide infrastructure for packages working with conditional line/page breaks
 %
 
-\include "../oll-core/package.ily"
-
 % Any functionality using breaks will rely on the edition-engraver
 % which is also part of openLilyLib
 %
