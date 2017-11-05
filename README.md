@@ -15,8 +15,8 @@ Any number of break sets can be registered and later accessed:
 \setBreaks original-edition page-turns #'(15)
 
 \registerBreakSet manuscript
-\setBreaks original-edition line-breaks #'(5 10 17 24)
-\setBreaks original-edition page-breaks #'(13)
+\setBreaks manuscript line-breaks #'(5 10 17 24)
+\setBreaks manuscript page-breaks #'(13)
 ```
 
 Breaks sets are currently used by the [page-layout](https://github.com/openlilylib/page-layout)
